@@ -1,0 +1,386 @@
+/* Basic reset and styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding-top: 56px;
+    /* Prevent content from hiding under the navbar */
+}
+
+/* Animated Navbar */
+nav {
+    padding: 1rem;
+}
+
+.animated-navbar {
+    transition: all 0.5s ease;
+}
+
+.animated-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Common button styles for all navbar links */
+.navbar-dark .navbar-nav .nav-link {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+    width: 120px; /* Adjusted fixed width */
+}
+
+/* Hover Effect */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: #ffcc00;
+    box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+}
+
+/* Before pseudo-element for underline effect */
+.navbar-dark .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc00;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for before pseudo-element */
+.navbar-dark .navbar-nav .nav-link:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+    }
+    50% {
+        box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+    }
+    100% {
+        box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+    }
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Profile Section */
+.profile-card {
+    background-color: #333;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+}
+
+.ucard_pic img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid yellow;
+}
+
+.info h3 {
+    font-size: 1.5rem;
+}
+
+.info h1 {
+    color: #ffcc00;
+    margin-top: 0.5rem;
+    font-size: 2.5rem;
+}
+
+/* Download Button */
+.dwnbp {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 1.5rem;
+}
+
+.buttonDownload {
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+    background-color: #46a6ff;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    text-indent: 15px;
+    border: none;
+}
+
+.buttonDownload:hover {
+    background-color: #8a43fc;
+    color: white;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+}
+
+.buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 1px;
+    margin-top: -9px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+    border-color: #ffffff;
+}
+
+.buttonDownload:hover:after {
+    border-top-color: #ffffff;
+    animation-play-state: running;
+}
+
+/* Skills Section */
+.skills {
+    text-align: center;
+    background-color: #252525;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.skills h2 {
+    text-align: center;
+}
+
+.service {
+    min-height: 370px;
+    border: 3px solid red;
+    background-color: #333;
+    border-radius: 10px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.service h3 {
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
+
+.service:hover h3 {
+    color: #ffffff;
+}
+
+.service p {
+    color: #fff;
+}
+
+/* Smooth transition for scroll animations */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sticky navbar with animation on scroll */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        transition: all 0.5s ease-in-out;
+    }
+
+    .navbar-collapse.show {
+        animation: fadeIn 0.5s;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Smaller text size for mobile */
+        width: auto; /* Remove fixed width for buttons */
+    }
+
+    .profile-card,
+    .service {
+        margin-bottom: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .service {
+        min-height: auto; /* Adjust height for mobile */
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: #252525;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffcc00;
+}
+
+.contact-section p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Social Icons */
+@media (max-width: 768px) {
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.back-to-top-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.back-to-top-btn.visible {
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Smaller Back to Top Button for Mobile */
+@media (max-width: 767px) {
+    .back-to-top-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .back-to-top-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
